@@ -23,23 +23,34 @@ import java.util.*
 @OptIn(ExperimentalCoroutinesApi::class)
 internal class NewsRepositoryImplTest{
 
-    private val article = Articles(
+    private val firstArticle = Articles(
         Source("mockId", "mockName"),
-        "mockAuthor",
-        "mockTitle",
-        "mockDescription",
-        "mockUrl",
-        "mockUrlToImage",
+        "mockAuthor1",
+        "mockTitle1",
+        "mockDescription1",
+        "mockUrl1",
+        "mockUrlToImage1",
         Date(),
-        "mockContent",
+        "mockContent1",
+    )
+
+    private val secondArticle = Articles(
+        Source("mockId", "mockName"),
+        "mockAuthor2",
+        "mockTitle2",
+        "mockDescription2",
+        "mockUrl2",
+        "mockUrlToImage2",
+        Date(),
+        "mockContent2",
     )
 
     private val newsAPIResponseNoError = NewsAPIResponse(
         "ok",
         10,
         arrayListOf(
-            article,
-            article
+            firstArticle,
+            secondArticle
         )
     )
     private val newsAPIResponseError = NewsAPIResponse(
@@ -118,6 +129,22 @@ internal class NewsRepositoryImplTest{
             .getCachedHeadlines("bbc-news", 1, 3).drop(1).first()
 
         assert(firstResult is NewsResponse.Error)
+
+        Dispatchers.resetMain()
+    }
+
+    @Test
+    fun getCachedHeadlineDetails_okResponse_getDetail() = runTest{
+        setTestDispatcher(this)
+
+        newsRepositoryImpl
+            .getCachedHeadlines("bbc-news", 1, 1)
+            .drop(1)
+            .first()
+
+        val result = newsRepositoryImpl.getCachedHeadlineDetails(1)
+
+        assert(result.title == secondArticle.title)
 
         Dispatchers.resetMain()
     }

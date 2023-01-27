@@ -11,7 +11,9 @@ import com.example.newsapp.R
 import com.example.newsapp.databinding.HeadlineItemBinding
 import com.example.newsapp.model.NewsData
 
-class HeadlinesAdapter: RecyclerView.Adapter<HeadlinesAdapter.ViewHolder>() {
+class HeadlinesAdapter(
+    private val onClick: (position: Int) -> Unit
+): RecyclerView.Adapter<HeadlinesAdapter.ViewHolder>() {
 
     private val callback = object : DiffUtil.ItemCallback<NewsData>(){
         override fun areItemsTheSame(oldItem: NewsData, newItem: NewsData) =
@@ -43,6 +45,7 @@ class HeadlinesAdapter: RecyclerView.Adapter<HeadlinesAdapter.ViewHolder>() {
         Glide.with(holder.binding.imageView.context)
             .load(item.urlToImage)
             .into(holder.binding.imageView)
+        holder.binding.root.setOnClickListener { onClick(position) }
     }
 
     override fun getItemCount() = differ.currentList.size
