@@ -14,4 +14,8 @@ class HeadlinesCache @Inject constructor() {
         return headlines
     }
 
+    fun getHeadlineByPosition(position: Int): NewsData{
+        return headlines[position]
+    }
+
 }
