@@ -16,9 +16,19 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField("String", "API_KEY", NEWS_API_KEY)
-        buildConfigField("String", "NEWS_SOURCE_ID", NEWS_SOURCE_ID)
-        buildConfigField("String", "NEWS_SOURCE_NAME", NEWS_SOURCE_NAME)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "source"
+    productFlavors {
+        bbc {
+            buildConfigField("String", "NEWS_SOURCE_ID", NEWS_SOURCE_ID_BBC)
+            buildConfigField("String", "NEWS_SOURCE_NAME", NEWS_SOURCE_NAME_BBC)
+        }
+        reuters {
+            buildConfigField("String", "NEWS_SOURCE_ID", NEWS_SOURCE_ID_REUTERS)
+            buildConfigField("String", "NEWS_SOURCE_NAME", NEWS_SOURCE_NAME_REUTERS)
+        }
     }
 
     buildTypes {
