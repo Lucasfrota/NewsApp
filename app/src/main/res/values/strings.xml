@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">NewsApp</string>
+    <string name="biometry_request_warning">Please press the button below to access the headlines</string>
+    <string name="biometry_title">Biometric login</string>
+    <string name="biometry_subtitle">Use your biometric credential to access the headlines</string>
+    <string name="biometry_cancel">Cancel login</string>
+    <string name="biometry_request_button">Access headlines</string>
 </resources>
