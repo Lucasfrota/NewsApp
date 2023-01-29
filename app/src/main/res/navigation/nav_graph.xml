@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/headlineFragment">
+    app:startDestination="@id/checkBiometryFragment">
 
     <fragment
         android:id="@+id/headlineFragment"
@@ -19,4 +19,15 @@
         android:name="com.example.newsapp.presentation.fragments.HeadlineDetailFragment"
         android:label="fragment_headline_detail"
         tools:layout="@layout/fragment_headline_detail" />
+    <fragment
+        android:id="@+id/checkBiometryFragment"
+        android:name="com.example.newsapp.presentation.fragments.CheckBiometryFragment"
+        android:label="fragment_check_biometry"
+        tools:layout="@layout/fragment_check_biometry" >
+        <action
+            android:id="@+id/action_checkBiometryFragment_to_headlineFragment"
+            app:destination="@id/headlineFragment"
+            app:popUpTo="@id/checkBiometryFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 </navigation>
