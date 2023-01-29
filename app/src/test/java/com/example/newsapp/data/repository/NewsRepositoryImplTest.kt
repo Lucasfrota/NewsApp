@@ -7,7 +7,7 @@ import com.example.newsapp.data.network.NewsAPIService
 import com.example.newsapp.data.network.model.Articles
 import com.example.newsapp.data.network.model.NewsAPIResponse
 import com.example.newsapp.data.network.model.Source
-import com.example.newsapp.model.NewsResponse
+import com.example.newsapp.presentation.model.NewsResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.drop

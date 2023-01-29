@@ -1,7 +1,7 @@
 package com.example.newsapp.data.repository
 
-import com.example.newsapp.model.NewsData
-import com.example.newsapp.model.NewsResponse
+import com.example.newsapp.presentation.model.NewsData
+import com.example.newsapp.presentation.model.NewsResponse
 import kotlinx.coroutines.flow.Flow
 
 interface NewsRepository {

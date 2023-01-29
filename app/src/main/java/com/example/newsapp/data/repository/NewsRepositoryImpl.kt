@@ -2,9 +2,9 @@ package com.example.newsapp.data.repository
 
 import com.example.newsapp.data.network.NewsAPIService
 import com.example.newsapp.data.cache.HeadlinesCache
-import com.example.newsapp.model.NewsData
+import com.example.newsapp.presentation.model.NewsData
 import com.example.newsapp.util.Mapper
-import com.example.newsapp.model.NewsResponse
+import com.example.newsapp.presentation.model.NewsResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

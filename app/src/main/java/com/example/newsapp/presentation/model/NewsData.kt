@@ -1,4 +1,4 @@
-package com.example.newsapp.model
+package com.example.newsapp.presentation.model
 
 data class NewsData(
     val urlToImage: String,

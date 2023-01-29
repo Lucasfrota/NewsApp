@@ -1,6 +1,6 @@
 package com.example.newsapp.data.cache
 
-import com.example.newsapp.model.NewsData
+import com.example.newsapp.presentation.model.NewsData
 import javax.inject.Inject
 
 class HeadlinesCacheImpl @Inject constructor(): HeadlinesCache{

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.BuildConfig
 import com.example.newsapp.R
 import com.example.newsapp.databinding.FragmentHeadlinesBinding
-import com.example.newsapp.model.NewsResponse
+import com.example.newsapp.presentation.model.NewsResponse
 import com.example.newsapp.presentation.adapters.HeadlinesAdapter
 import com.example.newsapp.presentation.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
