@@ -58,6 +58,7 @@ class HeadlinesFragment : Fragment() {
         viewModel.headlines.observe(viewLifecycleOwner) {
             when(it){
                 is NewsResponse.Success -> {
+                    showRecyclerView()
                     isLoading = false
                     headlinesAdapter.differ.submitList(it.newsData)
                     headlinesAdapter.notifyItemRangeChanged(it.newsData.size-pageSize, pageSize)
@@ -67,6 +68,7 @@ class HeadlinesFragment : Fragment() {
                 }
                 is NewsResponse.Error -> {
                     isLoading = false
+                    showErrorMessage()
                 }
                 is NewsResponse.Loading -> {
                     isLoading = true
@@ -99,5 +101,16 @@ class HeadlinesFragment : Fragment() {
                 viewModel.getHeadlines(newsSourceId, pageSize)
             }
         }
+    }
+
+    private fun showRecyclerView(){
+        binding.headlinesRecyclerView.visibility = View.VISIBLE
+        binding.errorTextView.visibility = View.INVISIBLE
+    }
+
+    private fun showErrorMessage(){
+        binding.headlinesRecyclerView.visibility = View.INVISIBLE
+        binding.errorTextView.visibility = View.VISIBLE
+        binding.errorMessage = requireContext().getString(R.string.request_error)
     }
 }
