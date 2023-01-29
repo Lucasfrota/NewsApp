@@ -1,7 +1,7 @@
 package com.example.newsapp.util
 
 import com.example.newsapp.data.network.model.Articles
-import com.example.newsapp.model.NewsData
+import com.example.newsapp.presentation.model.NewsData
 
 class Mapper {
 

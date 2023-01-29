@@ -5,4 +5,5 @@
     <string name="biometry_subtitle">Use your biometric credential to access the headlines</string>
     <string name="biometry_cancel">Cancel login</string>
     <string name="biometry_request_button">Access headlines</string>
+    <string name="request_error">The request could not be completed, please check your internet connection or try again later</string>
 </resources>

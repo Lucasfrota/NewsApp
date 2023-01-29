@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="headline_item_height">200dp</dimen>
+    <dimen name="headline_item_title_text_size">24sp</dimen>
+    <dimen name="headline_item_image_size">180dp</dimen>
+    <dimen name="headline_detail_image_height">200dp</dimen>
+    <dimen name="headline_detail_title_text_size">32sp</dimen>
+    <dimen name="headline_detail_content_text_size">24sp</dimen>
+    <dimen name="warning_message_text_size">32sp</dimen>
+</resources>

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newsapp.R
 import com.example.newsapp.databinding.HeadlineItemBinding
-import com.example.newsapp.model.NewsData
+import com.example.newsapp.presentation.model.NewsData
 
 class HeadlinesAdapter(
     private val onClick: (position: Int) -> Unit

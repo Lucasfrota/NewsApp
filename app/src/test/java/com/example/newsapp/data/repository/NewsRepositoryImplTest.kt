@@ -2,11 +2,12 @@ package com.example.newsapp.data.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.newsapp.data.cache.HeadlinesCache
+import com.example.newsapp.data.cache.HeadlinesCacheImpl
 import com.example.newsapp.data.network.NewsAPIService
 import com.example.newsapp.data.network.model.Articles
 import com.example.newsapp.data.network.model.NewsAPIResponse
 import com.example.newsapp.data.network.model.Source
-import com.example.newsapp.model.NewsResponse
+import com.example.newsapp.presentation.model.NewsResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.drop
@@ -77,7 +78,7 @@ internal class NewsRepositoryImplTest{
                 searchNews("bbc-news", 1, 3)
             } doReturn newsAPIResponseError
         }
-        headlinesCache = HeadlinesCache()
+        headlinesCache = HeadlinesCacheImpl()
         newsRepositoryImpl = NewsRepositoryImpl(newsAPIService, headlinesCache)
     }
 

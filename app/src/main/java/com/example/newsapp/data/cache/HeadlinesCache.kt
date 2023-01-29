@@ -1,21 +1,11 @@
 package com.example.newsapp.data.cache
 
-import com.example.newsapp.model.NewsData
-import javax.inject.Inject
-import javax.inject.Singleton
+import com.example.newsapp.presentation.model.NewsData
 
-class HeadlinesCache @Inject constructor() {
+interface HeadlinesCache {
 
-    @Singleton
-    val headlines: MutableList<NewsData> = arrayListOf()
+    fun addHeadlines(newHeadlines: List<NewsData>): List<NewsData>
 
-    fun addHeadlines(newHeadlines: List<NewsData>): List<NewsData> {
-        headlines += newHeadlines
-        return headlines
-    }
-
-    fun getHeadlineByPosition(position: Int): NewsData{
-        return headlines[position]
-    }
+    fun getHeadlineByPosition(position: Int): NewsData
 
 }

@@ -2,8 +2,8 @@ package com.example.newsapp.presentation.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.newsapp.data.repository.NewsRepository
-import com.example.newsapp.model.NewsData
-import com.example.newsapp.model.NewsResponse
+import com.example.newsapp.presentation.model.NewsData
+import com.example.newsapp.presentation.model.NewsResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
@@ -26,7 +26,8 @@ internal class NewsViewModelTest{
     )
 
     private val firstPageFlow = flow {
-        emit(NewsResponse.Success(
+        emit(
+            NewsResponse.Success(
             listOf(
                 newsData
             ),
@@ -35,7 +36,8 @@ internal class NewsViewModelTest{
     }
 
     private val finalPageFlow = flow {
-        emit(NewsResponse.Success(
+        emit(
+            NewsResponse.Success(
             listOf(
                 newsData,
                 newsData
